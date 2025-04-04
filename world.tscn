@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj5i6wtg4nasm"]
+
+[ext_resource type="Texture2D" uid="uid://c2umgvm276dlv" path="res://Tree-Assets.png" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://ym723nnl54x4" path="res://player.tscn" id="2_fj7yv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
+texture = ExtResource("1_f3sb7")
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_tlwt5"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fj7yv")
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_tlwt5")
+format = 2
+layer_0/tile_data = PackedInt32Array(524288, 65536, 2, 524289, 65536, 2, 524290, 65536, 2, 524291, 65536, 2, 524292, 65536, 2, 524293, 65536, 2, 524294, 65536, 2, 524295, 65536, 2, 524296, 65536, 2, 524297, 65536, 2, 524298, 65536, 2, 524299, 65536, 2, 524300, 65536, 2, 524301, 65536, 2, 524302, 65536, 2, 524303, 65536, 2, 524304, 65536, 2, 524305, 65536, 2, 524306, 65536, 2, 458763, 65536, 1, 458764, 65536, 1, 196624, 65536, 1, 196625, 65536, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_fj7yv")]
+position = Vector2(103, 73)
